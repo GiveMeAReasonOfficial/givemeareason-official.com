@@ -1,8 +1,8 @@
 import CMS from 'netlify-cms'
 import 'netlify-cms/dist/cms.css'
 
-import BlogPostPreview from './preview-templates/BlogPostPreview'
+import Preview from './Preview'
 
-CMS.registerPreviewStyle('/styles.css')
+CMS.registerPreviewStyle('/index.css')
 
-CMS.registerPreviewTemplate('pages', BlogPostPreview)
+CMS.registerPreviewTemplate('pages', Preview)
