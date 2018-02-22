@@ -1,12 +1,6 @@
 import React from 'react'
 import { BlogPostTemplate } from '../../templates/default'
 
-const BlogPostPreview = ({ entry, widgetFor }) => (
-	<BlogPostTemplate
-		content={widgetFor('body')}
-		description={entry.getIn(['data', 'description'])}
-		title={entry.getIn(['data', 'title'])}
-	/>
-)
+const BlogPostPreview = ({ entry, widgetFor }) => <BlogPostTemplate content={widgetFor('body')} />
 
 export default BlogPostPreview

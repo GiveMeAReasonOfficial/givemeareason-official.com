@@ -1,7 +1,6 @@
 ---
 templateKey: default
 path: /
-title: A beginners’ guide to brewing with Chemex
 ---
 
 ## concert
