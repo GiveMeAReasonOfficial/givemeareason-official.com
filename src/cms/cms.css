@@ -45,6 +45,9 @@
 		right: 0;
 		display: block !important;
 	}
+	.nc-githubAuthenticationPage-logo > span {
+		width: 80vw !important;
+	}
 }
 
 .nc-appHeader-content,
@@ -58,4 +61,8 @@
 .nc-mediaLibrary-search {
 	min-width: 120px;
 	width: auto;
+}
+
+.nc-gitGatewayAuthenticationPage-root {
+	min-width: 300px;
 }
