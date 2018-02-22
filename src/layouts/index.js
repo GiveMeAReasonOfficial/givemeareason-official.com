@@ -14,7 +14,6 @@ import { log, one, promise, type, task } from '../../falk/utilities'
 
 /*
 const test = ({ b }, a) => a.join(b)
-
 console.log(new object())
 
 task
@@ -31,10 +30,6 @@ const Li = all => <li>{all}</li>
 //const TemplateWrapper = ({ children }) => null
 const TemplateWrapper = ({ children }) => (
 	<div className="Body">
-		<MapItem container="ul">
-			<Li className="blue">{['bla', 'blu', 'blub']}</Li>
-		</MapItem>
-
 		<Helmet title="Give Me a Reason" />
 		<header className="Header">
 			<img className="Logo" src={joker} />

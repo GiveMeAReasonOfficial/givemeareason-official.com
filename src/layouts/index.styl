@@ -40,7 +40,6 @@ headings = 'h1, h2, h3, h4, h5, h6'
 .Body
   grid(direction: 'column')
   overflow hidden
-
   background linear-gradient(35deg, darken(mix(#2050cc, #095859, 70%), 80%) 0%,black 100%) no-repeat;
 
 .Sidebar
@@ -140,6 +139,7 @@ marginMain = 40px
   margin 0 auto
   padding  20px*1.6 20px
   padding-top 110px
+  padding-bottom 110px
   position relative
   &>*
     max-width 800px
@@ -216,10 +216,15 @@ marginMain = 40px
     width auto
     padding 0.3em 0.6em !important
     border-radius 0.1em
-    transition all ease-out 0.2s
-    &:hover
-      background black //white
-      //color black
+    transition all 0.1s ease-out//, transform 0.1s ease-out
+
+	 a:hover:not(:active)
+    //font-size 1.05em
+    //line-height 1.5em
+    //padding
+    filter brightness(120%)
+    background black //white
+    //color black
     .Icon
       width 1.5em
 

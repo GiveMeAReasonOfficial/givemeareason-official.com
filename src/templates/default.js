@@ -6,11 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 export const BlogPostTemplate = ({ content, contentComponent }) => {
 	const PostContent = contentComponent || Content
 
-	return (
-		<main className="Main">
-			<PostContent content={content} />
-		</main>
-	)
+	return <PostContent content={content} />
 }
 
 export default ({ data }) => {

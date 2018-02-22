@@ -8,9 +8,10 @@ public_folder: /img
 collections:
   - name: "pages"
     label: "Pages"
-    folder: "src/pages/pages"
+    folder: "src/content/pages"
     create: true
     fields:
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
