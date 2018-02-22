@@ -3,7 +3,7 @@ import { BlogPostTemplate } from '../templates/default'
 
 const Preview = ({ entry, widgetFor }) => (
 	<div className="Body">
-		<main className="Main">
+		<main className="Main Preview">
 			<BlogPostTemplate content={widgetFor('body')} />
 		</main>
 	</div>
