@@ -21,7 +21,7 @@ const logOne = (single, index) => {
 	}
 }
 
-const log = all => {
+const log = (...all) => {
 	if (Array.isArray(all)) {
 		all.map(logOne)
 	} else {

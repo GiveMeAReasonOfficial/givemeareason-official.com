@@ -9,18 +9,21 @@ import Icon from './Icon'
 import './index.styl'
 
 import { MapItem } from '../../falk/components'
-import { Object } from '../../falk/prototypes'
-import { log, one, promise, type } from '../../falk/utilities'
+import { object } from '../../falk/prototypes'
+import { log, one, promise, type, task } from '../../falk/utilities'
 
-one('bla', () => 'bökö')
+/*
+const test = ({ b }, a) => a.join(b)
+
+console.log(new object())
+
+task
+	.bind({ b: 'blub' })
+	.pipe(({}, a) => a.split('.'), test, log)
+	.then(fun => fun('all.all'))
 	.then(log)
 	.catch(log)
-console.log('bla')
-
-console.log({ a: [11, 12], bs: 'as' }.Map((a, b) => a + b, 'a'))
-
-flow(() => 'bökö', a => a + 'bökö', log)()
-
+*/
 import joker from './joker.svg'
 
 const Li = all => <li>{all}</li>

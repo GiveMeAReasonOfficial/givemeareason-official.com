@@ -1,5 +1,5 @@
-import Object from './Object.js';
+import object from './object.js';
 
 export {
-  Object
+  object
 };
