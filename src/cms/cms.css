@@ -1,3 +1,14 @@
 .nc-entryEditor-previewPane {
 	overflow: hidden;
 }
+
+.nc-previewPane-frame {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: 0;
+}
+
+.nc-entryEditor-viewControls {
+	right: 20px;
+}
