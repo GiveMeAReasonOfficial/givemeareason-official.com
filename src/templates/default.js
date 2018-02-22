@@ -7,7 +7,7 @@ export const BlogPostTemplate = ({ content, contentComponent }) => {
 	const PostContent = contentComponent || Content
 
 	return (
-		<main>
+		<main className="Main">
 			<PostContent content={content} />
 		</main>
 	)
