@@ -11,14 +11,18 @@
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-sass": "^1.0.12",
     "gatsby-plugin-sharp": "^1.6.18",
+    "gatsby-plugin-stylus": "^1.1.14",
     "gatsby-remark-images": "^1.5.18",
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.17",
     "gatsby-transformer-sharp": "^1.6.13",
+    "object-unfreeze": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "react-load-script": "0.0.6"
+    "react-load-script": "0.0.6",
+    "s-grid": "^1.2.1",
+    "stacktrace-js": "^2.0.0"
   },
   "keywords": [
     "gatsby"

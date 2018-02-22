@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Dosis|Lato:200,300,400,600,700,800,900|Nunito|Nunito+Sans:200,300,400,600,700,800,900|Roboto|Source+Code+Pro')
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import '../../node_modules/s-grid/s-grid-settings'
+// you can overwrite settings here
+@import '../../node_modules/s-grid/s-grid-functions'
+
+@import 'variables.styl'
+
+
+g = #00b564
+r = #f7a8c2
+themePrimary =  #0c5baf
+headerBackground = white
+buttonBackground = themePrimary
+buttonColor = white
+linkColor = lighten(themePrimary, 20%)
+buttonDepth = 1.5px
+buttonDepthClick = buttonDepth / 2
+buttonSpread = 1
+buttonShadow = rgba(#050625 0.2)
+
+/*
+exp0 = 100vh
+exp1 = calc(exp0 /1.6)
+exp2 = exp0 /1.6^2
+exp3 = exp0 /1.6^3
+
+exp5 = exp0 / 1.6^5
+
+*/
+// Elements
+
+text = 'p, a, li, td, th, ol, ul'
+headings = 'h1, h2, h3, h4, h5, h6'
+
+//dark = darken(#011936, 30%)
+
+
+.Body
+  grid(direction: 'column')
+  overflow hidden
+
+  background linear-gradient(35deg, darken(mix(#2050cc, #095859, 70%), 80%) 0%,black 100%) no-repeat;
+
+.Sidebar
+  padding 20px 20px*1.6
+  cell(1, 3, 'center', 0)
+  grid(direction: 'row')
+  background dark
+  height 100vh
+  box-shadow shadowPrimary
+  //display flex
+  max-width 300px
+  min-width 300px
+  //overflow hidden
+
+marginMain = 40px
+
+.Header
+  //
+  //cell(1, 1, 'center', 0)
+  font-size 40px
+  //background black
+  position fixed
+  //opacity 0.9
+  font-family Anton
+  height 80px
+  line-height 80px
+  width 100vw
+  z-index 2
+  //border-bottom 5px solid black
+  .Center
+    box-shadow  0px 3px 7px 0px black
+    opacity 1
+    transform rotate(5deg)
+    padding 0 20px
+    background #095859
+    color rgba(black, 0.8)
+    margin 0 auto
+    display table
+  //text-shadow 1px 1px 5px black
+  .Logo
+    position fixed
+    //margin-right -50px
+    transform rotate(-25deg)
+    height calc(100px + 10vw)
+    margin-top -6px
+    margin-bottom -14px
+    float left
+    //margin-right 20px
+
+
+.Nav, .NavFooter
+  cell(1, 1, 'stretch', 0)
+  grid(direction: 'row')
+  font-family Nunito
+  padding-top 30px
+
+.NavItem
+  cursor pointer
+  display table-row
+  color white
+  font-size 24px
+  font-weight 600
+  line-height 2em
+  opacity 0.6
+  cell(1, 1, 'top', 0)
+  transition opacity 0.2s ease-out
+  &:hover
+    opacity 1
+
+  .Icon
+    width 1.6em
+    text-align center
+
+.NavFooter
+  cell(1, 1, 'bottom', 0)
+
+.Navigation
+  cell(1, 1, 'center', 0)
+  background #095859
+  width 100vw
+  color black
+  opacity 0.7
+  text-align center
+  font-family Anton
+  font-size 30px
+  height 40px
+  line-height 40px
+
+
+.Main
+  //border-top 5px solid #095859
+  cell(2, 3, 'left', 0)
+  width 100vw
+  max-height calc(100vh - 40px)
+  height auto
+  overflow-y auto
+  margin 0 auto
+  padding  20px*1.6 20px
+  padding-top 110px
+  position relative
+  &>*
+    max-width 800px
+    margin 0 auto
+
+  .Pic
+    display block
+    background black
+    height calc(100vh - 340px)
+
+  .SocialMedia
+    *
+      margin 20px
+    margin 0 auto
+    display table
+    font-size 50px
+    color #095859
+
+  #Background
+    position absolute
+    top 0
+    max-height 100%
+    max-width 100%
+    z-index -1
+    opacity 0.1
+
+
+
+  p, a, li, td, th, ol, ul, h1, h2, h3, h4, h5, h6
+    color white// mix(#095859, white, 10%)
+    line-height 1.6em
+    font-family fontPrimary
+    text-decoration none
+    opacity 0.9
+    margin 0
+    margin-top 1em
+    margin bottom 0.6em
+    //text-align center
+
+  h1, h2, h3, h4, h5, h6
+    opacity 0.7
+    //letter-spacing -0.06em
+    padding 0
+    font-family Anton//Dosis//Comfortaa
+    font-weight 500
+    letter-spacing 0
+    color white
+
+
+  h2
+    font-size 45px
+
+  h3
+    font-size 30px
+    padding 0.3em 0
+
+  h4
+    font-size 25 px
+    //padding 0.6em 0
+    //padding-top 1em
+
+  p
+    padding-left 20px
+
+  p, a, li, td, th, ol, ul
+    font-size 20px
+    //letter-spacing 0.06em
+
+
+  a
+    color white
+    cursor pointer
+    display table-cell
+    width auto
+    padding 0.3em 0.6em !important
+    border-radius 0.1em
+    transition all ease-out 0.2s
+    &:hover
+      background black //white
+      //color black
+    .Icon
+      width 1.5em
+
+
+
+table
+  border-collapse collapse
+  width 100%
+  p
+    padding 0.3em 0.6em !important
+    margin 0
+
+
+  tr:not(.Year):nth-child(odd)
+    background  black //rgba(#33658A, 0.3)// rgba(white, 0.1)
+  td
+    padding 6px 16px
+  tr.Year td
+    border-bottom 1px solid #ddd
+    padding 0
+  th
+    display none
+    background none
+    height 0 !important
+    opacity 0 !important
