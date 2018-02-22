@@ -20,7 +20,9 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-helmet": "^5.2.0",
+    "react-images": "^0.5.17",
     "react-load-script": "0.0.6",
+    "react-photo-gallery": "^6.0.22",
     "s-grid": "^1.2.1",
     "stacktrace-js": "^2.0.0"
   },

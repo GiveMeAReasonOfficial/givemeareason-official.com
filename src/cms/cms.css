@@ -12,3 +12,50 @@
 .nc-entryEditor-viewControls {
 	right: 20px;
 }
+
+@media (max-width: 800px) {
+	.nc-collectionPage-main {
+		padding: 0;
+	}
+	.nc-entryEditor-toolbar-metaSection,
+	.nc-entryEditor-toolbar-backCollection,
+	.nc-editor-toggle:nth-child(2) {
+		display: none;
+	}
+	.nc-entryEditor-toolbar-backArrow,
+	.nc-entryEditor-toolbar-backStatus {
+		display: block;
+		margin: 0;
+	}
+	.nc-entryEditor-toolbar-backSection {
+		display: block;
+		padding-top: 10px;
+	}
+	.nc-collectionPage-sidebar {
+		position: inherit;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.nc-mediaLibrary-dialog {
+		width: calc(100% - 40px);
+	}
+	.Pane {
+		position: fixed !important;
+		left: 0;
+		right: 0;
+		display: block !important;
+	}
+}
+
+.nc-appHeader-content,
+.nc-app-main,
+.nc-entryEditor-toolbar,
+.nc-entryEditor-containerOuter {
+	min-width: 440px;
+}
+
+.nc-mediaLibrary-header,
+.nc-mediaLibrary-search {
+	min-width: 120px;
+	width: auto;
+}
