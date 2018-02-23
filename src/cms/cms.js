@@ -10,7 +10,7 @@ import Preview from './Preview'
 
 ReactDOM.createPortal(
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />,
-	document.getElementsByTagName('head')
+	document.getElementsByTagName('HEAD')[0]
 )
 
 CMS.registerPreviewStyle('/styles.css')
