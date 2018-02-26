@@ -16,14 +16,19 @@ collections:
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - label: "Concerts"
-    name: "concerts"
-    widget: "list"
-    fields:
-      - label: "Date"
-        name: "date"
-        widget: "date"
-        default: ""
-        format: "DD.MM.YY"
-      - {label: "name", name: "title", widget: "string"}
-      - {label: "location", name: "title", widget: "string"}
+  - label: "ages"
+    name: "ages"
+    files:
+      - label: "Concerts"
+        create: true
+        file: "src/content/concerts.yml"
+        name: "concerts"
+        widget: "list"
+        fields:
+          - label: "Date"
+            name: "date"
+            widget: "date"
+            default: ""
+            format: "DD.MM.YY"
+          - {label: "name", name: "title", widget: "string"}
+          - {label: "location", name: "title", widget: "string"}
