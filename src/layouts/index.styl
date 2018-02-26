@@ -184,20 +184,20 @@ marginMain = 40px
     line-height 1.6em
     font-family fontPrimary
     text-decoration none
-    opacity 0.9
+    opacity 1
     margin 0
     margin-top 1em
     margin bottom 0.6em
     //text-align center
 
   h1, h2, h3, h4, h5, h6
-    opacity 0.7
+    //opacity 0.7
     //letter-spacing -0.06em
     padding 0
     font-family Anton//Dosis//Comfortaa
     font-weight 500
     letter-spacing 0
-    color white
+
 
 
   h2
@@ -225,7 +225,7 @@ marginMain = 40px
     cursor pointer
     display table-cell
     width auto
-    padding 0.3em 0.6em !important
+    padding 0.3em 0.6em //!important
     border-radius 0.1em
     transition all 0.1s ease-out//, transform 0.1s ease-out
 
@@ -244,18 +244,30 @@ marginMain = 40px
 table
   border-collapse collapse
   width 100%
-  p
-    padding 0.3em 0.6em !important
-    margin 0
+  p, a
+    padding 0 !important
+    margin 0 !important
 
 
   tr:not(.Year):nth-child(odd)
     background  black //rgba(#33658A, 0.3)// rgba(white, 0.1)
   td
     padding 6px 16px
-  tr.Year td
-    border-bottom 1px solid #ddd
-    padding 0
+
+    &:nth-child(3) *
+      text-align right
+      float right
+
+  tr
+    &.Year td
+      border-bottom 1px solid #ddd
+      //*
+        //padding-left 12px
+
+    &.TableHeader td
+      //border-bottom 1px solid #ddd
+      padding-left 0 !important
+
   th
     display none
     background none

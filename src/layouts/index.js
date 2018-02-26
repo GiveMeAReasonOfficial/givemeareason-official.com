@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import { flow } from 'lodash'
 
 import Navbar from '../components/Navbar'
+import Calendar from '../components/Calendar'
 import Icon from './Icon'
 
 import './index.styl'
@@ -106,12 +107,14 @@ const TemplateWrapper = ({ children }) => (
 		</header>
 		<main className="Main">
 			<App />
+
 			<h1 style={{ color: 'white', textAlign: 'center' }}>Melodic Punk Rock</h1>
 			<div className="SocialMedia">
 				<Icon fab="facebook" />
 				<Icon fab="youtube" />
 				<Icon fab="instagram" />
 			</div>
+			<Calendar />
 			{children()}
 		</main>
 		<nav className="Navigation">contact booking</nav>
