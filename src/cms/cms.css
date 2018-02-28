@@ -67,7 +67,7 @@
 	min-width: 300px;
 }
 
-@viewpoint {
+@viewport {
 	width: device-width;
-	zoom: 1;
+	zoom: 2;
 }
