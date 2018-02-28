@@ -23,13 +23,7 @@ collections:
       name: concert
       file: src/content/concerts.yml
       fields:
-        - {label: alt-text, name: alt-text, widget: string}
-        - label: bla
-          name: alt
-          widget: line
-          fields:
-            - {label: name, name: name, widget: date, format: DD.MM.YY}
-            - {label: location, name: location, widget: string}
+        - {label: alt-text, name: alt-text, widget: string}      
         - label: Event
           name: event
           widget: list

@@ -66,3 +66,9 @@
 .nc-gitGatewayAuthenticationPage-root {
 	min-width: 300px;
 }
+
+@viewport {
+	width: device-width;
+	max-zoom: 3;
+	min-zoom: 0.5;
+}
