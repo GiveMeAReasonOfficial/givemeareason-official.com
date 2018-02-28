@@ -6,29 +6,38 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    folder: "src/content/pages"
+  - name: pages
+    label: Pages
+    folder: src/content/pages
     create: true
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Path", name: "path", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: Title, name: title, widget: string}
+      - {label: Template Key, name: templateKey, widget: hidden, default: blog-post}
+      - {label: Path, name: path, widget: string}
+      - {label: Body, name: body, widget: markdown}
 
-  - label: "ages"
-    name: "ages"
+  - label: Concerts
+    name: concerts
     files:
-      - label: "Concerts"
-        create: true
-        file: "src/content/concerts.yml"
-        name: "concerts"
-        widget: "list"
-        fields:
-          - label: "Date"
-            name: "date"
-            widget: "date"
-            default: ""
-            format: "DD.MM.YY"
-          - {label: "name", name: "title", widget: "string"}
-          - {label: "location", name: "title", widget: "string"}
+    - label: Concerts
+      name: concert
+      file: src/content/concerts.yml
+      fields:
+        - {label: alt-text, name: alt-text, widget: string}
+        - label: bla
+          name: alt
+          widget: line
+          fields:
+            - {label: name, name: name, widget: date, format: DD.MM.YY}
+            - {label: location, name: location, widget: string}
+        - label: Event
+          name: event
+          widget: list
+          fields:
+            - {label: name, name: name, widget: string}
+            - label: Date
+              name: date
+              widget: date
+              default:
+              format: DD.MM.YY
+            - {label: location, name: location, widget: string}

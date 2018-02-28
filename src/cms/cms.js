@@ -1,8 +1,9 @@
 import CMS from 'netlify-cms'
 import 'netlify-cms/dist/cms.css'
 
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import line from './widgets/line'
 
 import './cms.css'
 
@@ -19,3 +20,6 @@ ReactDOM.render(
 CMS.registerPreviewStyle('/styles.css')
 
 CMS.registerPreviewTemplate('pages', Preview)
+
+console.log(...line)
+CMS.registerWidget(...line)
