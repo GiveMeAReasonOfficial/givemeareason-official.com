@@ -21,5 +21,5 @@ CMS.registerPreviewStyle('/styles.css')
 
 CMS.registerPreviewTemplate('pages', Preview)
 
-console.log(...line)
-CMS.registerWidget(...line)
+//console.log(...line)
+//CMS.registerWidget(...line)
