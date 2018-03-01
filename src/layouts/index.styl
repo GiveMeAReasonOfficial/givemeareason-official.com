@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Anton|Dosis|Lato:200,300,400,600,700,800,900|Nunito|Nunito+Sans:200,300,400,600,700,800,900|Roboto|Source+Code+Pro')
+@import url('https://fonts.googleapis.com/css?family=Anton|Dosis|Lato:200,300,400,600,700,800,900|Nunito|Nunito+Sans:200,300,400,600,700,800,900|Oswald|Roboto|Source+Code+Pro')
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 @import '../../node_modules/s-grid/s-grid-settings'
@@ -35,6 +35,12 @@ text = 'p, a, li, td, th, ol, ul'
 headings = 'h1, h2, h3, h4, h5, h6'
 
 //dark = darken(#011936, 30%)
+
+.react-photo-gallery--gallery
+  min-width 100% !important
+
+#lightboxBackdrop
+  font-family Anton
 
 
 .Body
@@ -180,17 +186,21 @@ marginMain = 40px
 
 
   p, a, li, td, th, ol, ul, h1, h2, h3, h4, h5, h6
-    color white// mix(#095859, white, 10%)
+    color  rgba(#71789c, 0.7) //#b4c7d4// mix(#095859, white, 10%)
     line-height 1.6em
-    font-family fontPrimary
+    font-family Oswald//fontPrimary
     text-decoration none
-    opacity 1
     margin 0
     margin-top 1em
     margin bottom 0.6em
+    padding-left 10px
+    letter-spacing 0.03em
+
     //text-align center
 
+
   h1, h2, h3, h4, h5, h6
+    color white
     //opacity 0.7
     //letter-spacing -0.06em
     padding 0
@@ -212,19 +222,19 @@ marginMain = 40px
     //padding 0.6em 0
     //padding-top 1em
 
-  p
-    padding-left 20px
+
 
   p, a, li, td, th, ol, ul
-    font-size 20px
+    font-size 25px
     //letter-spacing 0.06em
 
 
   a
-    color white
+    //color white
     cursor pointer
     display table-cell
     width auto
+    line-height 1
     padding 0.3em 0.6em //!important
     border-radius 0.1em
     transition all 0.1s ease-out//, transform 0.1s ease-out
@@ -249,7 +259,7 @@ table
     margin 0 !important
 
 
-  tr:not(.Year):nth-child(odd)
+  tr:not(.Year):not(.TableHeader):nth-child(odd)
     background  black //rgba(#33658A, 0.3)// rgba(white, 0.1)
   td
     padding 6px 16px
@@ -260,7 +270,7 @@ table
 
   tr
     &.Year td
-      border-bottom 1px solid #ddd
+      //border-bottom 1px solid #ddd
       //*
         //padding-left 12px
 

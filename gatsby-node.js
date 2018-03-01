@@ -19,6 +19,15 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 					}
 				}
 			}
+
+			contentYaml {
+				alt_text
+				event {
+					date
+					location
+					name
+				}
+			}
 		}
 	`).then(result => {
 		if (result.errors) {

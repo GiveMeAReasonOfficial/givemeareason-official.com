@@ -29,24 +29,24 @@ import joker from './joker.svg'
 import Gallery from 'react-photo-gallery'
 import Lightbox from 'react-images'
 
-const photos = [
-	{ src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
-	{ src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1 },
-	{ src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4 },
-	{ src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4 },
-	{ src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4 },
-	{ src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3 },
-	{ src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
-	{ src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
-	{ src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
-	{ src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
-	{ src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 }
-]
+const getIMGObject = url =>
+	new Promise((resolve, reject) => {
+		var img = new Image()
+		img.onload = function() {
+			console.log(this.naturalHeight)
+			return resolve({
+				src: url,
+				width: 1,
+				height: this.naturalHeight / this.naturalWidth
+			})
+		}
+		img.src = url
+	})
 
 class App extends React.Component {
 	constructor() {
 		super()
-		this.state = { currentImage: 0 }
+		this.state = { currentImage: 0, photos: [] }
 		this.closeLightbox = this.closeLightbox.bind(this)
 		this.openLightbox = this.openLightbox.bind(this)
 		this.gotoNext = this.gotoNext.bind(this)
@@ -74,16 +74,21 @@ class App extends React.Component {
 			currentImage: this.state.currentImage + 1
 		})
 	}
+	componentWillMount = () => {
+		getIMGObject('https://source.unsplash.com/iecJiKe_RNg/600x799').then(obj =>
+			this.setState({ photos: [obj, obj, obj, obj, obj], containerWidth: 400 })
+		)
+	}
 	render() {
 		return (
 			<div className="test">
 				<Gallery
-					photos={photos}
+					photos={this.state.photos}
 					onClick={this.openLightbox}
-					columns={Math.ceil(photos.length / 2)}
+					columns={Math.ceil(this.state.photos.length / 2)}
 				/>
 				<Lightbox
-					images={photos}
+					images={this.state.photos}
 					onClose={this.closeLightbox}
 					onClickPrev={this.gotoPrevious}
 					onClickNext={this.gotoNext}
