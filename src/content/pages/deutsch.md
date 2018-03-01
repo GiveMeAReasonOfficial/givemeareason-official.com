@@ -1,6 +1,6 @@
 ---
-templateKey: default
 title: Deutsch
+templateKey: default
 path: /
 ---
 
@@ -28,15 +28,14 @@ Wir freuen uns darauf, demnächst neue Konzerte bekanntgeben zu können.
 
 ## about
 
-The best looking band on Earth! Naja, oder einfach die vier Jungs von **Give Me
-A Reason**, die sich die Welt zu Füssen rocken. Dabei nehmen sie sich selbst
+The best looking band on Earth! Naja, oder einfach die vier Jungs von GIVE ME A REASON, die sich die Welt zu Füssen rocken. Dabei nehmen sie sich selbst
 weit weniger ernst als ihre Musik. Ein rockiger Melodic-Punk, der geradezu nach
 einem tanzenden Publikum schreit. Und dann gibt, es da noch diese Stimme,
 mittendrin, die die Träumer mit Inspiration versorgt. Mit stilechten
 Eigenkompositionen und einer Handvoll Covers nehmen uns die jungen Zürcher mit
 auf einen Road Trip live on Stage.
 
-### GIVE ME A REASON sind
+GIVE ME A REASON sind
 
 |                  |                  |
 | ---------------- | ---------------: |
