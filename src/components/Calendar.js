@@ -152,6 +152,21 @@ const Table = ({ rows }) => {
 	return <table>{rows.map((content, index) => <Row key={index}>{content}</Row>)}</table>
 }
 
+const Alt = ({ upcoming, altText }) => {
+	if (Object.keys(upcoming.dates).length !== 0) {
+		console.log(upcoming.dates)
+		return upcoming.map({ prop: 'dates', desc: false }, Rows)
+	} else {
+		return (
+			<tr>
+				<td colSpan="3">
+					<p>{altText}</p>
+				</td>
+			</tr>
+		)
+	}
+}
+
 export default class Calendar extends Component {
 	constructor(props) {
 		super(props)
@@ -192,13 +207,13 @@ export default class Calendar extends Component {
 				<table>
 					<tr className="TableHeader">
 						<td colSpan="3">
-							<h3>upcomming</h3>
+							<h2>upcoming</h2>
 						</td>
 					</tr>
-					{upcoming.map({ prop: 'dates', desc: false }, Rows)}
+					<Alt upcoming={upcoming} altText={this.props.events.altText} />
 					<tr className="TableHeader">
 						<td colSpan="3">
-							<h3>past</h3>
+							<h2>past</h2>
 						</td>
 					</tr>
 					{past.map({ prop: 'dates', desc: true }, Rows)}

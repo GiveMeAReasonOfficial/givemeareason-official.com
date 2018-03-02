@@ -39,7 +39,7 @@ export const pageQuery = graphql`
 			}
 		}
 		contentYaml {
-			alt_text
+			altText
 			event {
 				date
 				location

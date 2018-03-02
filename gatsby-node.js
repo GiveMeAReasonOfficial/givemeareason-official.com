@@ -21,7 +21,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 			}
 
 			contentYaml {
-				alt_text
+				altText
 				event {
 					date
 					location

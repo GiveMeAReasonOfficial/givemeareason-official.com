@@ -1,16 +1,9 @@
-alt-text: Momentan haben wir keine Konzerte
+altText: Momentan haben wir keine Konzerte
 event:
-<<<<<<< HEAD
   - date: 01.03.2018
     location: Leimbach
     name: GZ Leimbach
   - date: 01.03.2018
-=======
-  - date: 16.03.2018
-    location: Leimbach
-    name: GZ Leimbach
-  - date: 05.03.2018
->>>>>>> 0e6c32541b43a5c741d9abc2c491623ede456054
     location: Zürich
     name: New School
     url: gt
