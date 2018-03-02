@@ -45,7 +45,7 @@ export default class Gallery extends Component {
 			window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
 
 		let columns
-		if (w < h * 1.5) {
+		if (w * 1.5 > h) {
 			columns = this.state.rows[2]
 		} else {
 			columns = this.state.rows[3]
