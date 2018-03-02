@@ -3,21 +3,6 @@ title: Deutsch
 templateKey: default
 path: /
 ---
-
-Wir freuen uns darauf, demnächst neue Konzerte bekanntgeben zu können.
-
-|                 |                                                                                |                                                             |
-| --------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------: |
-| 12. Jan         | [Unplugged](https://www.facebook.com/events/575930452750798/?active_tab=about) | [GZ Leimbach](http://www.gz-zh.ch/gz-leimbach/gz-leimbach/) |
-| <h4> 2017 </h4> |                                                                                |                                                             |
-| 15. Sept        | Open Church                                                                    |                                                    Leimbach |
-| 09. Sept        | Skatepark Opening Münchenstein                                                 |                                                       Basel |
-| 08. Juli        | Restaurant Hüsli (Unplugged)                                                   |                                                    Leimbach |
-| 01. Juli        | Grümpi Leimbach                                                                |                                                    Leimbach |
-| 26. Mai         | Vorstadt Sounds Festival                                                       |                                                      Zürich |
-| 20. Mai         | Unplugged                                                                      |                                                 GZ Leimbach |
-| 13. Mai         | Lauter Festival                                                                |                                                     Stall 6 |
-
 # about
 
 The best looking band on Earth! Naja, oder einfach die vier Jungs von GIVE ME A REASON, die sich die Welt zu Füssen rocken. Dabei nehmen sie sich selbst
@@ -30,11 +15,11 @@ auf einen Road Trip live on Stage.
 GIVE ME A REASON sind
 
 |                  |                  |
-| ---------------- | ---------------: |
+| ---------------- | ---------------- |
 | Mattia Di Paolo  | Vocals / Gitarre |
-| David Sipek      |          Gitarre |
-| Marvin Trottmann |             Bass |
-| Dario Bistoletti |            Drums |
+| David Sipek      | Gitarre          |
+| Marvin Trottmann | Bass             |
+| Dario Bistoletti | Drums            |
 
 # contact/booking
 
