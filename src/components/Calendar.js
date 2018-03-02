@@ -39,7 +39,6 @@ Date.prototype.removeDays = function(days) {
 }
 
 const Cell = ({ content }) => {
-	console.log(content)
 	if (typeof content === 'object') {
 		if (content.url !== null) {
 			return (
@@ -95,8 +94,8 @@ const getDate = dateStr => {
 	}
 }
 
-const Row = ({ children }) => (
-	<tr>
+const Row = ({ children, index }) => (
+	<tr key={index}>
 		<DateCell>{children.date}</DateCell>
 		<Cell content={children} />
 		<Cell content={children.location} />
@@ -105,16 +104,21 @@ const Row = ({ children }) => (
 
 const Rows = (contents, index, desc) => {
 	let temp = [
-		<tr className="Year">
+		<tr className="Year" key="y">
 			<td colSpan="3">
 				<h4>{index}</h4>
 			</td>
 		</tr>
 	]
-	console.log(contents)
 	sortBy(contents, {
 		desc
-	}).map((date, index) => temp.push(<Row key={index}>{date}</Row>))
+	}).map((date, index) =>
+		temp.push(
+			<Row key={index} index={index}>
+				{date}
+			</Row>
+		)
+	)
 
 	return temp
 }
@@ -129,9 +133,7 @@ var dates = [
 ]
 
 const pushDate = function(date) {
-	//console.log(date)
 	const year = date.date.getFullYear()
-	//console.log(year)
 	if (typeof this.dates[year] !== 'undefined') {
 		this.dates[year].push(date)
 	} else {
@@ -141,7 +143,6 @@ const pushDate = function(date) {
 
 const map = function({ prop, desc }, fun) {
 	let arr = []
-	console.log(this)
 	sortBy(Object.keys(this[prop]), {
 		desc
 	}).forEach(key => arr.push(fun(this[prop][key], key, desc)))
@@ -154,7 +155,6 @@ const Table = ({ rows }) => {
 
 const Alt = ({ upcoming, altText }) => {
 	if (Object.keys(upcoming.dates).length !== 0) {
-		console.log(upcoming.dates)
 		return upcoming.map({ prop: 'dates', desc: false }, Rows)
 	} else {
 		return (
@@ -178,7 +178,6 @@ export default class Calendar extends Component {
 		//if (typeof this.props.className !== 'undefined') {
 		//	className = this.props.className
 		//}
-		console.log(this.props)
 		let rows = this.props.events.event.map(event => {
 			event.date = getDate(event.date)
 			return event
@@ -192,7 +191,7 @@ export default class Calendar extends Component {
 
 		let upcoming = { dates: {}, pushDate, map }
 		let past = { dates: {}, pushDate, map }
-		console.log(rows)
+
 		rows.map(event => {
 			if (event.date > now) {
 				upcoming.pushDate(event)
@@ -205,18 +204,20 @@ export default class Calendar extends Component {
 		return (
 			<div>
 				<table>
-					<tr className="TableHeader">
-						<td colSpan="3">
-							<h2>upcoming</h2>
-						</td>
-					</tr>
-					<Alt upcoming={upcoming} altText={this.props.events.altText} />
-					<tr className="TableHeader">
-						<td colSpan="3">
-							<h2>past</h2>
-						</td>
-					</tr>
-					{past.map({ prop: 'dates', desc: true }, Rows)}
+					<tbody>
+						<tr className="TableHeader">
+							<td colSpan="3">
+								<h2>upcoming</h2>
+							</td>
+						</tr>
+						<Alt upcoming={upcoming} altText={this.props.events.altText} />
+						<tr className="TableHeader">
+							<td colSpan="3">
+								<h2>past</h2>
+							</td>
+						</tr>
+						{past.map({ prop: 'dates', desc: true }, Rows)}
+					</tbody>
 				</table>
 			</div>
 		)

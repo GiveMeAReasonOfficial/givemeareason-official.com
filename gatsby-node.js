@@ -15,6 +15,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 							templateKey
 							path
 							title
+							subtitle
 						}
 					}
 				}
@@ -26,6 +27,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 					date
 					location
 					name
+				}
+			}
+			allImageSharp {
+				edges {
+					node {
+						sizes {
+							srcSet
+							sizes
+						}
+					}
 				}
 			}
 		}

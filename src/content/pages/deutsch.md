@@ -1,8 +1,10 @@
 ---
 title: Deutsch
+subtitle: Melodic Punk Rock
 templateKey: default
 path: /
 ---
+
 # about
 
 The best looking band on Earth! Naja, oder einfach die vier Jungs von GIVE ME A REASON, die sich die Welt zu Füssen rocken. Dabei nehmen sie sich selbst
@@ -12,14 +14,14 @@ mittendrin, die die Träumer mit Inspiration versorgt. Mit stilechten
 Eigenkompositionen und einer Handvoll Covers nehmen uns die jungen Zürcher mit
 auf einen Road Trip live on Stage.
 
-GIVE ME A REASON sind
+### GIVE ME A REASON sind
 
 |                  |                  |
-| ---------------- | ---------------- |
+| ---------------- | ---------------: |
 | Mattia Di Paolo  | Vocals / Gitarre |
-| David Sipek      | Gitarre          |
-| Marvin Trottmann | Bass             |
-| Dario Bistoletti | Drums            |
+| David Sipek      |          Gitarre |
+| Marvin Trottmann |             Bass |
+| Dario Bistoletti |            Drums |
 
 # contact/booking
 

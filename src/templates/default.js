@@ -2,8 +2,9 @@ import React from 'react'
 import graphql from 'graphql'
 import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
+
+import Intro from '../components/Intro'
 import Calendar from '../components/Calendar'
-import Icon from '../components/Icon'
 
 export const BlogPostTemplate = ({ content, contentComponent }) => {
 	const PostContent = contentComponent || Content
@@ -14,14 +15,21 @@ export const BlogPostTemplate = ({ content, contentComponent }) => {
 export default ({ data }) => {
 	const { markdownRemark: post } = data
 
+	const photos = data.allImageSharp.edges.map(
+		({ node: { sizes: { src, srcSet, sizes, aspectRatio } } }) => ({
+			srcSet: srcSet.split(','),
+			src,
+			sizes: [sizes],
+			width: aspectRatio,
+			height: 1
+		})
+	)
+
+	console.log(photos)
+
 	return (
 		<main>
-			<h1 style={{ textAlign: 'center' }}>Melodic Punk Rock</h1>
-			<div className="SocialMedia">
-				<Icon fab="facebook" />
-				<Icon fab="youtube" />
-				<Icon fab="instagram" />
-			</div>
+			<Intro subtitle={data.markdownRemark.frontmatter.subtitle} photos={photos} />
 			<h1>Concerts</h1>
 			<Calendar events={data.contentYaml}>{data.contentYaml}</Calendar>
 			<BlogPostTemplate content={post.html} contentComponent={HTMLContent} />
@@ -36,6 +44,7 @@ export const pageQuery = graphql`
 			frontmatter {
 				path
 				title
+				subtitle
 			}
 		}
 		contentYaml {
@@ -45,6 +54,18 @@ export const pageQuery = graphql`
 				location
 				name
 				url
+			}
+		}
+		allImageSharp {
+			edges {
+				node {
+					sizes {
+						src
+						srcSet
+						sizes
+						aspectRatio
+					}
+				}
 			}
 		}
 	}

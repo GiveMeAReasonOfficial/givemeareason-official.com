@@ -12,6 +12,7 @@ collections:
     create: true
     fields:
       - {label: Title, name: title, widget: string}
+      - {label: Subtitle, name: subtitle, widget: string}
       - {label: Template Key, name: templateKey, widget: hidden, default: blog-post}
       - {label: Path, name: path, widget: string}
       - {label: Body, name: body, widget: markdown}
