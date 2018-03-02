@@ -5,7 +5,6 @@ import { flow } from 'lodash'
 
 import Navbar from '../components/Navbar'
 import Calendar from '../components/Calendar'
-import Icon from './Icon'
 
 import './index.styl'
 
@@ -29,19 +28,21 @@ import joker from './joker.svg'
 import Gallery from 'react-photo-gallery'
 import Lightbox from 'react-images'
 
-const getIMGObject = url =>
-	new Promise((resolve, reject) => {
-		var img = new Image()
-		img.onload = function() {
-			console.log(this.naturalHeight)
-			return resolve({
-				src: url,
-				width: 1,
-				height: this.naturalHeight / this.naturalWidth
-			})
-		}
-		img.src = url
-	})
+/*const getIMGObject = url =>
+new Promise((resolve, reject) => {
+	var img = new Image()
+	img.onload = function() {
+		console.log(this.naturalHeight)
+		return resolve({
+			src: url,
+			width: 1,
+			height: this.naturalHeight / this.naturalWidth
+		})
+	}
+	img.src = url
+})
+
+*/
 
 class App extends React.Component {
 	constructor() {
@@ -75,9 +76,9 @@ class App extends React.Component {
 		})
 	}
 	componentWillMount = () => {
-		getIMGObject('https://source.unsplash.com/iecJiKe_RNg/600x799').then(obj =>
-			this.setState({ photos: [obj, obj, obj, obj, obj], containerWidth: 400 })
-		)
+		//getIMGObject('https://source.unsplash.com/iecJiKe_RNg/600x799').then(obj =>
+		//this.setState({ photos: [obj, obj, obj, obj, obj], containerWidth: 400 })
+		//)
 	}
 	render() {
 		return (
@@ -113,13 +114,6 @@ const TemplateWrapper = ({ children }) => (
 		<main className="Main">
 			<App />
 
-			<h1 style={{ color: 'white', textAlign: 'center' }}>Melodic Punk Rock</h1>
-			<div className="SocialMedia">
-				<Icon fab="facebook" />
-				<Icon fab="youtube" />
-				<Icon fab="instagram" />
-			</div>
-			<Calendar />
 			{children()}
 		</main>
 		<nav className="Navigation">contact booking</nav>

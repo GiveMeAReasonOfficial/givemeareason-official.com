@@ -1,4 +1,5 @@
 import React, { Component, createElement } from 'react'
+import Icon from './Icon'
 
 // sort date
 var sortBy = (function() {
@@ -37,19 +38,24 @@ Date.prototype.removeDays = function(days) {
 	return dat
 }
 
-const Cell = ({ children }) => {
-	if (Array.isArray(children)) {
-		return (
-			<td>
-				<a href={children[1]} target="_blank">
-					{children[0]}
-				</a>
-			</td>
-		)
+const Cell = ({ content }) => {
+	console.log(content)
+	if (typeof content === 'object') {
+		if (content.url !== null) {
+			return (
+				<td>
+					<a href={content.url} target="_blank">
+						{content.name} <Icon fas="link" />
+					</a>
+				</td>
+			)
+		} else {
+			return <td>{content.name}</td>
+		}
 	} else {
 		return (
 			<td>
-				<p>{children}</p>
+				<p>{content}</p>
 			</td>
 		)
 	}
@@ -91,13 +97,9 @@ const getDate = dateStr => {
 
 const Row = ({ children }) => (
 	<tr>
-		{children.map((content, index) => {
-			if (index === 0) {
-				return <DateCell key={index}>{content}</DateCell>
-			} else {
-				return <Cell key={index}>{content}</Cell>
-			}
-		})}
+		<DateCell>{children.date}</DateCell>
+		<Cell content={children} />
+		<Cell content={children.location} />
 	</tr>
 )
 
@@ -109,10 +111,10 @@ const Rows = (contents, index, desc) => {
 			</td>
 		</tr>
 	]
+	console.log(contents)
 	sortBy(contents, {
-		prop: 0,
 		desc
-	}).map((content, index) => temp.push(<Row key={index}>{content}</Row>))
+	}).map((date, index) => temp.push(<Row key={index}>{date}</Row>))
 
 	return temp
 }
@@ -127,8 +129,9 @@ var dates = [
 ]
 
 const pushDate = function(date) {
-	const year = date[0].getFullYear()
-
+	//console.log(date)
+	const year = date.date.getFullYear()
+	//console.log(year)
 	if (typeof this.dates[year] !== 'undefined') {
 		this.dates[year].push(date)
 	} else {
@@ -138,6 +141,7 @@ const pushDate = function(date) {
 
 const map = function({ prop, desc }, fun) {
 	let arr = []
+	console.log(this)
 	sortBy(Object.keys(this[prop]), {
 		desc
 	}).forEach(key => arr.push(fun(this[prop][key], key, desc)))
@@ -149,15 +153,20 @@ const Table = ({ rows }) => {
 }
 
 export default class Calendar extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {}
+	}
 	render() {
 		let props = { ...this.props }
 		//let className = ''
 		//if (typeof this.props.className !== 'undefined') {
 		//	className = this.props.className
 		//}
-		let rows = dates.map(date => {
-			date[0] = getDate(date[0])
-			return date
+		console.log(this.props)
+		let rows = this.props.events.event.map(event => {
+			event.date = getDate(event.date)
+			return event
 		})
 
 		rows = sortBy(rows, {
@@ -168,12 +177,12 @@ export default class Calendar extends Component {
 
 		let upcoming = { dates: {}, pushDate, map }
 		let past = { dates: {}, pushDate, map }
-
-		rows.map(date => {
-			if (date[0] > now) {
-				upcoming.pushDate(date)
+		console.log(rows)
+		rows.map(event => {
+			if (event.date > now) {
+				upcoming.pushDate(event)
 			} else {
-				past.pushDate(date)
+				past.pushDate(event)
 			}
 		})
 

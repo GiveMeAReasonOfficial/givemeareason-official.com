@@ -23,7 +23,7 @@ collections:
       name: concert
       file: src/content/concerts.yml
       fields:
-        - {label: alt-text, name: alt-text, widget: string}      
+        - {label: alt-text, name: alt-text, widget: string}
         - label: Event
           name: event
           widget: list
@@ -33,5 +33,6 @@ collections:
               name: date
               widget: date
               default:
-              format: DD.MM.YY
+              format: DD.MM.YYYY
             - {label: location, name: location, widget: string}
+            - {label: url (optional), name: url, widget: string}

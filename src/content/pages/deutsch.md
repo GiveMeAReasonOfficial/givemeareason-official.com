@@ -4,15 +4,7 @@ templateKey: default
 path: /
 ---
 
-## concert
-
-### upcoming
-
 Wir freuen uns darauf, demnächst neue Konzerte bekanntgeben zu können.
-
-### past
-
-#### 2018
 
 |                 |                                                                                |                                                             |
 | --------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------: |
@@ -26,7 +18,7 @@ Wir freuen uns darauf, demnächst neue Konzerte bekanntgeben zu können.
 | 20. Mai         | Unplugged                                                                      |                                                 GZ Leimbach |
 | 13. Mai         | Lauter Festival                                                                |                                                     Stall 6 |
 
-## about
+# about
 
 The best looking band on Earth! Naja, oder einfach die vier Jungs von GIVE ME A REASON, die sich die Welt zu Füssen rocken. Dabei nehmen sie sich selbst
 weit weniger ernst als ihre Musik. Ein rockiger Melodic-Punk, der geradezu nach
@@ -44,7 +36,7 @@ GIVE ME A REASON sind
 | Marvin Trottmann |             Bass |
 | Dario Bistoletti |            Drums |
 
-## contact/booking
+# contact/booking
 
 [E-Mail: givemeareason.official@gmail.com](mailto:givemeareason.official@gmail.com)
 

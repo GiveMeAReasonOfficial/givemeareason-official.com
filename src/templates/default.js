@@ -2,6 +2,8 @@ import React from 'react'
 import graphql from 'graphql'
 import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
+import Calendar from '../components/Calendar'
+import Icon from '../components/Icon'
 
 export const BlogPostTemplate = ({ content, contentComponent }) => {
 	const PostContent = contentComponent || Content
@@ -12,7 +14,19 @@ export const BlogPostTemplate = ({ content, contentComponent }) => {
 export default ({ data }) => {
 	const { markdownRemark: post } = data
 
-	return <BlogPostTemplate content={post.html} contentComponent={HTMLContent} />
+	return (
+		<main>
+			<h1 style={{ textAlign: 'center' }}>Melodic Punk Rock</h1>
+			<div className="SocialMedia">
+				<Icon fab="facebook" />
+				<Icon fab="youtube" />
+				<Icon fab="instagram" />
+			</div>
+			<h1>Concerts</h1>
+			<Calendar events={data.contentYaml}>{data.contentYaml}</Calendar>
+			<BlogPostTemplate content={post.html} contentComponent={HTMLContent} />
+		</main>
+	)
 }
 
 export const pageQuery = graphql`
@@ -22,6 +36,15 @@ export const pageQuery = graphql`
 			frontmatter {
 				path
 				title
+			}
+		}
+		contentYaml {
+			alt_text
+			event {
+				date
+				location
+				name
+				url
 			}
 		}
 	}
