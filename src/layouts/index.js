@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar'
 import Calendar from '../components/Calendar'
 
 import './index.styl'
+import './small.styl'
 
 import { MapItem } from '../../falk/components'
 import { object } from '../../falk/prototypes'
