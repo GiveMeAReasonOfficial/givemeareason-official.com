@@ -24,7 +24,7 @@ Sortiert Automatisch
 
 Grafischi Bearbeitig vom Markdown, Gallerie und Kalender
 
-### Alles Gueti vo de Tilla und Mier
+### Alles Gueti vo de Tilla und mier
 
 #### und natürlich vo de restliche Familie Zwimpfer
 
