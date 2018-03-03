@@ -59,3 +59,35 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 		})
 	})
 }
+
+const addIDs = (string, index) => {
+	if (index) {
+		let lines = string.split('\n')
+		lines[0] = `<h1 id="${lines[0]}">${lines[0]}</h1>`
+		return lines.join('\n')
+	} else {
+		return string
+	}
+}
+
+var first = true
+exports.onCreateNode = ({ node, boundActionCreators }) => {
+	const { createNode, createNodeField } = boundActionCreators
+	// Transform the new node here and create a new node or
+
+	// create a new node field.
+	//console.log(node.internal.type)
+
+	if (node.internal.type === 'MarkdownRemark') {
+		if (first) {
+			console.log('\x1b[34m', '\n created pages')
+			first = false
+		}
+		console.log('\x1b[34m', node.frontmatter.path)
+		node.internal.content = node.internal.content
+			.split('\n# ')
+			.map(addIDs)
+			.join('\n')
+		//node.internal.content = Mark({ children: node.internal.content, markups })
+	}
+}
