@@ -14,29 +14,28 @@ import { log, one, promise, type, task } from '../../falk/utilities'
 
 import joker from './joker.svg'
 
-const Li = all => <li>{all}</li>
+const Li = (all) => <li>{all}</li>
 
 //const TemplateWrapper = ({ children }) => null
 const TemplateWrapper = ({ children }) => (
 	<div className="Body">
 		<Helmet title="Give Me a Reason" />
 		<header className="Header">
-			<img className="Logo" src={joker} />
-
 			<a className="Center" href="#home">
 				GIVE ME A REASON
 			</a>
+			<nav className="Navigation">
+				<a href="#concerts">concerts</a>
+				<a href="#about">about</a>
+				<a href="#contact/booking">{'contact/booking'}</a>
+			</nav>
 		</header>
 		<main className="Main">
 			<span id="home" />
 
 			{children()}
 		</main>
-		<nav className="Navigation">
-			<a href="#concerts">concerts</a>
-			<a href="#about">about</a>
-			<a href="#contact/booking">{'contact/booking'}</a>
-		</nav>
+		<img className="Logo" src={joker} />
 	</div>
 )
 

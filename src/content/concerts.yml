@@ -1,9 +1,28 @@
 altText: 'Wir freuen uns darauf, demnächst neue Konzerte bekanntgeben zu können.'
 event:
-  - date: 01.03.2018
-    location: Leimbach
-    name: GZ Leimbach
-  - date: 01.05.2017
+  - date: 13.05.2017
+    location: Stall 6
+    name: Lauter Festival
+  - date: 26.05.2017
     location: Zürich
-    name: Mit Link
-    url: gt
+    name: Vorstadt Sounds Festival
+  - date: 09.09.2017
+    location: Münchenstein
+    name: Skatepark Opening
+  - date: 12.01.2018
+    location: GZ Leimbach
+    name: Unplugged
+  - date: 17.04.2018
+    location: La Bohème Bar
+    name: Unplugged
+  - date: 29.05.2018
+    location: Polyterasse ETH
+    name: Summerbar by VSETH
+  - date: 23.06.2018
+    location: Moods Zürich
+    name: Band-it
+    url: >-
+      https://www.band-it.ch/bands-on-stage/bandportraits/bandportrait/?user_bandit_pi2%5BshowUid%5D=1481&cHash=f2ba297933339ae47876ef5c6b7caa0e
+  - date: 08.09.2018
+    location: Güterschuppen Töss
+    name: Töss Rockt 9
