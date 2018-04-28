@@ -6,7 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 import Intro from '../components/Intro'
 import Calendar from '../components/Calendar'
 const Cal = ({ events }) => (
-	<span>{typeof window !== `undefined` ? Calendar({ events }) : null}}</span>
+	<span>{typeof window !== `undefined` ? (<Calendar events={events}/>)  : null}}</span>
 )
 
 export const BlogPostTemplate = ({ content, contentComponent }) => {
