@@ -34,6 +34,9 @@ headings = 'h1, h2, h3, h4, h5, h6'
 #lightboxBackdrop
   font-family Anton
 
+*
+  font-family Oswald
+
 .Body
   grid(direction: 'column')
   overflow hidden
@@ -49,7 +52,7 @@ headings = 'h1, h2, h3, h4, h5, h6'
   box-shadow shadowPrimary
   //display flex
   max-width 300px
-  min-width 300px
+  min-widtfont-family Nunito Sansh 300px
   //overflow hidden
 
 marginMain = 40px
@@ -66,7 +69,6 @@ marginMain = 40px
   //background black
   position fixed
   //opacity 0.9
-  font-family Anton
   height auto
   line-height 80px
   width 100vw
@@ -75,10 +77,22 @@ marginMain = 40px
   background darken(#13134c, 50%)  //#13134c 
   box-shadow  0px 3px 7px 0px black
   padding 0 20px
-  *
-    color rgba(white, 0.8)
-    text-decoration none
   transition all 0.1s ease-out
+  
+
+  .Title
+    font-family Anton
+    font-size 60px
+   
+  &>*
+    line-height 80px
+    height 80px
+    display inline-table
+
+  *
+    color white
+    text-decoration none
+  
   &:hover
     color rgba(black, 0.4)
 
@@ -122,16 +136,14 @@ marginMain = 40px
   //cell(1, 1, 'center', 0)
   //background #095859
   //width 100vw
-  display inline-block
+  //display inline-block
   float right
   //opacity 0.7
   text-align center
   //font-family Anton
-  height 1em
-  line-height 80px
-  *
-    text-decoration none
-    padding 0 5px
+  //height 1em
+  //line-height 80px
+  &>*
     font-size 23px
     transition all 0.1s ease-out
     &:hover
