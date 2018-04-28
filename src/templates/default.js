@@ -32,6 +32,7 @@ export default ({ data }) => {
 			<Intro subtitle={data.markdownRemark.frontmatter.subtitle} photos={photos} />
 			<h1 id="concerts">concerts</h1>
 
+			<Calendar events={data.contentYaml} />
 			<BlogPostTemplate content={post.html} contentComponent={HTMLContent} />
 		</main>
 	)

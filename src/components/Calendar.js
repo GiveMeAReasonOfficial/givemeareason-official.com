@@ -81,11 +81,11 @@ const month = [
 	'Dez'
 ]
 
-const getMonth = date => month[date.getMonth()]
+const getMonth = (date) => month[date.getMonth()]
 
-const getDay = date => date.getDate() + '. '
+const getDay = (date) => date.getDate() + '. '
 
-const getDate = dateStr => {
+const getDate = (dateStr) => {
 	if (typeof dateStr === 'string') {
 		var parts = dateStr.split('.')
 		return new Date(parts[2], parts[1] - 1, parts[0])
@@ -145,7 +145,7 @@ const map = function({ prop, desc }, fun) {
 	let arr = []
 	sortBy(Object.keys(this[prop]), {
 		desc
-	}).forEach(key => arr.push(fun(this[prop][key], key, desc)))
+	}).forEach((key) => arr.push(fun(this[prop][key], key, desc)))
 	return arr
 }
 
@@ -170,15 +170,13 @@ const Alt = ({ upcoming, altText }) => {
 export default class Calendar extends Component {
 	constructor(props) {
 		super(props)
-		this.state = {}
-	}
-	render() {
-		let props = { ...this.props }
+
+		//let props = { ...this.props }
 		//let className = ''
 		//if (typeof this.props.className !== 'undefined') {
 		//	className = this.props.className
 		//}
-		let rows = this.props.events.event.map(event => {
+		let rows = props.events.event.map((event) => {
 			event.date = getDate(event.date)
 			return event
 		})
@@ -192,7 +190,7 @@ export default class Calendar extends Component {
 		let upcoming = { dates: {}, pushDate, map }
 		let past = { dates: {}, pushDate, map }
 
-		rows.map(event => {
+		rows.map((event) => {
 			if (event.date > now) {
 				upcoming.pushDate(event)
 			} else {
@@ -200,7 +198,9 @@ export default class Calendar extends Component {
 			}
 		})
 
-		//return createElement(Table, { rows, ...props })
+		this.state = { upcoming, past }
+	}
+	render() {
 		return (
 			<div>
 				<table>
@@ -210,13 +210,13 @@ export default class Calendar extends Component {
 								<h2>upcoming</h2>
 							</td>
 						</tr>
-						<Alt upcoming={upcoming} altText={this.props.events.altText} />
+						<Alt upcoming={this.state.upcoming} altText={this.props.events.altText} />
 						<tr className="TableHeader">
 							<td colSpan="3">
 								<h2>past</h2>
 							</td>
 						</tr>
-						{past.map({ prop: 'dates', desc: true }, Rows)}
+						{this.state.past.map({ prop: 'dates', desc: true }, Rows)}
 					</tbody>
 				</table>
 			</div>
