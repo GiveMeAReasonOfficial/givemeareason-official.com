@@ -5,11 +5,11 @@ import Content, { HTMLContent } from '../components/Content'
 
 import Intro from '../components/Intro'
 
+let Calendar = () => null
 if (typeof window !== `undefined`) {
-	const Calendar = require('../components/Calendar')
-} else {
-	const Calendar = () => null
+	Calendar = require('../components/Calendar')
 }
+
 export const BlogPostTemplate = ({ content, contentComponent }) => {
 	const PostContent = contentComponent || Content
 
