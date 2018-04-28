@@ -4,10 +4,10 @@ import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
 
 import Intro from '../components/Intro'
-
-let Calendar = () => null
+import Calendar from '../components/Calendar'
+let Cal = () => null
 if (typeof window !== `undefined`) {
-	Calendar = require('../components/Calendar')
+	Cal = Calendar
 }
 
 export const BlogPostTemplate = ({ content, contentComponent }) => {
@@ -36,7 +36,7 @@ export default ({ data }) => {
 			<Intro subtitle={data.markdownRemark.frontmatter.subtitle} photos={photos} />
 			<h1 id="concerts">concerts</h1>
 
-			<Calendar events={data.contentYaml} />
+			<Cal events={data.contentYaml} />
 			<BlogPostTemplate content={post.html} contentComponent={HTMLContent} />
 		</main>
 	)
