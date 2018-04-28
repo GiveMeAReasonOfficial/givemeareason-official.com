@@ -7,8 +7,9 @@ import Intro from '../components/Intro'
 
 if (typeof window !== `undefined`) {
 	const Calendar = require('../components/Calendar')
+} else {
+	const Calendar = () => null
 }
-
 export const BlogPostTemplate = ({ content, contentComponent }) => {
 	const PostContent = contentComponent || Content
 
