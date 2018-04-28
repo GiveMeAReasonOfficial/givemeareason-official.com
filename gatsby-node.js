@@ -1,5 +1,14 @@
 const path = require('path')
 
+exports.modifyWebpackConfig = ({ config, stage }) => {
+	if (stage === 'build-html') {
+		config.loader('null', {
+			test: /Calendar/,
+			loader: 'null-loader'
+		})
+	}
+}
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
 	const { createPage } = boundActionCreators
 
@@ -40,9 +49,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 				}
 			}
 		}
-	`).then(result => {
+	`).then((result) => {
 		if (result.errors) {
-			result.errors.forEach(e => console.error(e.toString()))
+			result.errors.forEach((e) => console.error(e.toString()))
 			return Promise.reject(result.errors)
 		}
 
@@ -84,10 +93,7 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
 			first = false
 		}
 		console.log('\x1b[34m', node.frontmatter.path)
-		node.internal.content = node.internal.content
-			.split('\n# ')
-			.map(addIDs)
-			.join('\n')
+		node.internal.content = node.internal.content.split('\n# ').map(addIDs).join('\n')
 		//node.internal.content = Mark({ children: node.internal.content, markups })
 	}
 }
