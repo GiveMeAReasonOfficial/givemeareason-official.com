@@ -4,7 +4,10 @@ import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
 
 import Intro from '../components/Intro'
-import Calendar from '../components/Calendar'
+
+if (typeof window !== `undefined`) {
+	const Calendar = require('../components/Calendar')
+}
 
 export const BlogPostTemplate = ({ content, contentComponent }) => {
 	const PostContent = contentComponent || Content
