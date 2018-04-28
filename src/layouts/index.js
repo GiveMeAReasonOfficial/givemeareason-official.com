@@ -8,9 +8,9 @@ import Calendar from '../components/Calendar'
 import './index.styl'
 import './small.styl'
 
-import { MapItem } from '../../falk/components'
-import { object } from '../../falk/prototypes'
-import { log, one, promise, type, task } from '../../falk/utilities'
+//import { MapItem } from '../../falk/components'
+//import { object } from '../../falk/prototypes'
+//import { log, one, promise, type, task } from '../../falk/utilities'
 
 import joker from './joker.svg'
 
