@@ -29,17 +29,7 @@ export default ({ data }) => {
 
 	console.log(7.1)
 
-	return (
-		<main>
-			{console.log(7.2)}
-			<Intro subtitle={data.markdownRemark.frontmatter.subtitle} photos={photos} />
-			<h1 id="concerts">concerts</h1>
-			{console.log(7.3)}
-			<Calendar events={data.contentYaml}>{data.contentYaml}</Calendar>
-			<BlogPostTemplate content={post.html} contentComponent={HTMLContent} />
-			{console.log(7.4)}
-		</main>
-	)
+	return <main />
 }
 
 console.log(7.5)
